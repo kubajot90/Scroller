@@ -1,0 +1,29 @@
+[33mcommit 44c4d2a8d7a057400b7fb1d2dd5eecb0e6109e3b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Jakub Jakubowski <kubajot6@wp.pl>
+Date:   Mon May 23 19:14:58 2022 +0100
+
+    Add scroller class ad use it
+
+[33mcommit b22e67480af0960d75dbe998bc052a9207d2a548[m
+Author: Jakub Jakubowski <kubajot6@wp.pl>
+Date:   Mon May 23 14:40:24 2022 +0100
+
+    Separate functions
+
+[33mcommit 7f16cff287a3fc0ed1e32cd24832faa66533b98d[m
+Author: Jakub Jakubowski <kubajot6@wp.pl>
+Date:   Mon May 23 13:45:21 2022 +0100
+
+    Add scroll feture
+
+[33mcommit 34901b64ea4d52701ae4e96bc759fba780d6704e[m
+Author: Jakub Jakubowski <kubajot6@wp.pl>
+Date:   Mon May 23 11:07:27 2022 +0100
+
+    add normalize css, basic styles and javascript variables
+
+[33mcommit 1bca10e546c9a5a169e72f45df3067bf936e5357[m
+Author: Jakub Jakubowski <kubajot6@wp.pl>
+Date:   Mon May 23 10:31:38 2022 +0100
+
+    initial coomit

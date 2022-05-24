@@ -5,12 +5,14 @@ class Scroller {
     this.currentSectionIndex = [...this.sections].findIndex((element) => {
       return this.isScrolledIntoView(element);
     });
-    // this.currentSectionIndex =
-    //   this.currentSectionIndex < 0 ? 0 : this.currentSectionIndex;
+
+    this.navigationContainer = document.createElement("aside");
 
     this.currentSectionIndex = Math.max(this.currentSectionIndex, 0);
 
     this.isThrottled = false;
+
+    this.drawNawigation();
   }
 
   isScrolledIntoView(el) {
@@ -20,11 +22,11 @@ class Scroller {
 
     const isVisible = elemTop >= 0 && elemBottom <= window.innerHeight;
 
-    console.log(rect);
     return isVisible;
   }
 
   scrollToCurrentSection() {
+    this.selectActiveNavItem();
     this.sections[this.currentSectionIndex].scrollIntoView({
       behavior: "smooth",
       block: "start",
@@ -55,5 +57,38 @@ class Scroller {
     const direction = event.wheelDelta < 0 ? 1 : -1;
 
     this.scroll(direction);
+  }
+
+  drawNawigation() {
+    // this.navigationContainer = document.createElement("aside");
+    this.navigationContainer.setAttribute("class", "scroller__navigation");
+    const list = document.createElement("ul");
+
+    this.sections.forEach((section, index) => {
+      const listItem = document.createElement("li");
+
+      listItem.addEventListener("click", () => {
+        this.currentSectionIndex = index;
+        this.scrollToCurrentSection();
+      });
+
+      list.appendChild(listItem);
+    });
+    this.navigationContainer.appendChild(list);
+
+    document.body.appendChild(this.navigationContainer);
+    this.selectActiveNavItem();
+  }
+
+  selectActiveNavItem() {
+    const navigationItems = this.navigationContainer.querySelectorAll("li");
+
+    navigationItems.forEach((item, index) => {
+      if (index === this.currentSectionIndex) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    });
   }
 }
